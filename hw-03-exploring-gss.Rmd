@@ -74,8 +74,31 @@ Answers to this question are stored in the `harass5` variable in our dataset.
 
 1.  What are the possible responses to this question and how many respondents chose each of these answers?
 
+```{r}
+
+freq_table <- table(gss16$harass5)
+
+print(freq_table)
+
+```
+
+***For this question, there are 3 possible responses. 96 chose "Does Not Apply", 1136 chose "No", and 237 chose "Yes".***
+
 2.  What percent of the respondents for whom this question is applicable\
     (i.e. excluding `NA`s and `Does not apply`s) have been harassed by their superiors or co-workers at their job.
+    
+```{r}
+
+percentage_yes <- (freq_table["Yes"] / sum(freq_table))
+
+print(percentage_yes)
+
+
+
+```    
+
+***The number of people who chose `yes` in the survey to being harassed was 16%***
+
 
 🧶 ✅ ⬆️ Knit, *commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
